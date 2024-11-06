@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map with Filters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="toolbar">
+        <div class="dropdown">
+            <label><strong>Document Type</strong></label>
+            <div>
+                <input type="checkbox" id="type1" name="document_type" value="Type 1">
+                <label for="type1">Type 1</label>
+                <input type="checkbox" id="type2" name="document_type" value="Type 2">
+                <label for="type2">Type 2</label>
+                <!-- Add more checkboxes as needed -->
+            </div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search by keyword...">
+            <button onclick="searchLocations()">Search</button>
+        </div>
+    </div>
+
+    <div id="map">
+        {{ map_html|safe }}
+    </div>
+
+    <script>
+        // JavaScript for filtering map markers
+        function searchLocations() {
+            const searchTerm = document.getElementById("search-input").value.toLowerCase();
+            const markers = document.querySelectorAll('.leaflet-marker-icon');
+            markers.forEach(marker => {
+                const popupText = marker.getAttribute("title").toLowerCase();
+                marker.style.display = popupText.includes(searchTerm) ? "" : "none";
+            });
+        }
+
+        // JavaScript for filtering by document type
+        document.querySelectorAll('input[name="document_type"]').forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+                const selectedTypes = Array.from(document.querySelectorAll('input[name="document_type"]:checked'))
+                    .map(checkbox => checkbox.value);
+
+                document.querySelectorAll('.leaflet-marker-icon').forEach(marker => {
+                    const popupText = marker.getAttribute("title");
+                    const markerType = popupText.match(/Type: (\w+)/)[1];
+                    marker.style.display = selectedTypes.includes(markerType) ? "" : "none";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

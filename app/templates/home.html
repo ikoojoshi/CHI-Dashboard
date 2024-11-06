@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Climate Action Map{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Climate Action Map</h2>
+    <p>Explore various climate action plans across Illinois.</p>
+    <a href="{{ url_for('main.map_view') }}" class="btn">View Map</a>
+{% endblock %}
