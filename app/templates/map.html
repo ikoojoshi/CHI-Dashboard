@@ -7,52 +7,82 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <!-- Toolbar for interactive controls -->
     <div class="toolbar">
-        <div class="dropdown">
-            <label><strong>Document Type</strong></label>
-            <div>
-                <input type="checkbox" id="type1" name="document_type" value="Type 1">
-                <label for="type1">Type 1</label>
-                <input type="checkbox" id="type2" name="document_type" value="Type 2">
-                <label for="type2">Type 2</label>
-                <!-- Add more checkboxes as needed -->
-            </div>
+        <!-- Toggle between County and City views -->
+        <div class="toggle-container">
+            <label for="view-type"><strong>View Type</strong></label>
+            <select id="view-type" onchange="reloadMap()">
+                <option value="cities">Cities</option>
+                <option value="counties">Counties</option>
+            </select>
         </div>
 
+        <!-- Dropdown for program filter -->
+        <div class="dropdown-container">
+            <label for="program-filter"><strong>Program Name</strong></label>
+            <select id="program-filter" onchange="reloadMap()">
+                <option value="">All Programs</option>
+            </select>
+        </div>
+
+        <!-- Search bar for keyword filtering -->
         <div class="search-bar">
+            <label for="search-input"><strong>Search</strong></label>
             <input type="text" id="search-input" placeholder="Search by keyword...">
-            <button onclick="searchLocations()">Search</button>
+            <button onclick="reloadMap()">Search</button>
         </div>
     </div>
 
-    <div id="map">
-        {{ map_html|safe }}
+    <!-- Map container with embedded iframe -->
+    <div id="map-container">
+        <iframe src="{{ url_for('static', filename='map.html') }}" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
+    <!-- JavaScript to handle filtering and reloading the map -->
     <script>
-        // JavaScript for filtering map markers
-        function searchLocations() {
-            const searchTerm = document.getElementById("search-input").value.toLowerCase();
-            const markers = document.querySelectorAll('.leaflet-marker-icon');
-            markers.forEach(marker => {
-                const popupText = marker.getAttribute("title").toLowerCase();
-                marker.style.display = popupText.includes(searchTerm) ? "" : "none";
+        function reloadMap() {
+            const viewType = document.getElementById('view-type').value;
+            const programFilter = document.getElementById('program-filter').value;
+            const keyword = document.getElementById('search-input').value;
+    
+            // Request the updated map without reloading the page
+            fetch(`/update_map?view_type=${viewType}&filter_program=${programFilter}&keyword=${keyword}`)
+                .then(() => {
+                    // Reload the iframe to display the updated map
+                    const iframe = document.querySelector('#map-container iframe');
+                    iframe.src = iframe.src;  // Refresh iframe by resetting the src attribute
+                });
+        }
+    
+        // Populate program filter dynamically
+        function populateProgramFilter(programs) {
+            const filter = document.getElementById('program-filter');
+            filter.innerHTML = '<option value="">All Programs</option>';
+            programs.forEach(program => {
+                const option = document.createElement('option');
+                option.value = program;
+                option.textContent = program;
+                filter.appendChild(option);
             });
         }
-
-        // JavaScript for filtering by document type
-        document.querySelectorAll('input[name="document_type"]').forEach((checkbox) => {
-            checkbox.addEventListener("change", function () {
-                const selectedTypes = Array.from(document.querySelectorAll('input[name="document_type"]:checked'))
-                    .map(checkbox => checkbox.value);
-
-                document.querySelectorAll('.leaflet-marker-icon').forEach(marker => {
-                    const popupText = marker.getAttribute("title");
-                    const markerType = popupText.match(/Type: (\w+)/)[1];
-                    marker.style.display = selectedTypes.includes(markerType) ? "" : "none";
-                });
-            });
+    
+        // Fetch program types based on selected view type
+        document.getElementById('view-type').addEventListener('change', () => {
+            const viewType = document.getElementById('view-type').value;
+            fetch(`/programs?view_type=${viewType}`)
+                .then(response => response.json())
+                .then(data => populateProgramFilter(data.programs));
         });
+    
+        // Initialize the program filter on page load
+        window.onload = () => {
+            const viewType = document.getElementById('view-type').value;
+            fetch(`/programs?view_type=${viewType}`)
+                .then(response => response.json())
+                .then(data => populateProgramFilter(data.programs));
+        };
     </script>
+    
 </body>
 </html>

@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Toolbar styling */
+.toolbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    color: #ffffff;
+}
+
+.toolbar label {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.toolbar select, .toolbar input[type="text"], .toolbar button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.toolbar select {
+    background-color: #ffffff;
+    color: #333;
+    width: 150px;
+}
+
+.toolbar .search-bar input[type="text"] {
+    width: 200px;
+    background-color: #f0f0f0;
+}
+
+.toolbar .search-bar button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.toolbar .search-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Map container with embedded iframe */
+#map-container {
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjusts the map height to fit below the toolbar */
+    margin-top: 100px; /* Offset to account for the toolbar height */
+    background-color: #eaeaea;
+    position: relative;
+}
