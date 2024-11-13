@@ -1,29 +1,3 @@
-# from flask import render_template, Blueprint, request, jsonify
-# from .utils import create_map
-# import pandas as pd
-
-# main = Blueprint('main', __name__)
-
-# @main.route('/')
-# def home():
-#     return render_template('home.html')
-
-# @main.route('/map')
-# def map_view():
-#     view_type = request.args.get('view_type', 'cities')
-#     filter_program = request.args.get('filter_program', None)
-#     keyword = request.args.get('keyword', None)
-#     map_html = create_map(view_type=view_type, filter_program=filter_program, keyword=keyword)
-#     return map_html
-
-# @main.route('/programs')
-# def get_programs():
-#     view_type = request.args.get('view_type', 'cities')
-#     file_path = f'data/ClimateActionPlan_{view_type.capitalize()}.csv'
-#     df = pd.read_csv(file_path)
-#     programs = df['Program Name'].unique().tolist()
-#     return jsonify({"programs": programs})
-
 from flask import render_template, Blueprint, request, jsonify
 from .utils import create_map
 import pandas as pd
