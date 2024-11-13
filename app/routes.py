@@ -31,7 +31,6 @@ def update_map():
     print(view_type)
     # Generate and save the map as HTML
     create_map(view_type=view_type, filter_program=filter_program, keyword=keyword)
-    print(view_type)
     
     # Return a 204 No Content response to signify that the map was updated successfully
     return '', 204
@@ -44,6 +43,8 @@ def get_programs():
     
     # Load data and extract unique program names
     df = pd.read_csv(file_path)
-    programs = df['Program Name'].unique().tolist()
-    
+    if view_type == "cities":
+        programs = df['Program Name'].unique().tolist()
+    else: 
+        programs = df['Document'].unique().tolist()
     return jsonify({"programs": programs})
