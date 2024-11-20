@@ -61,8 +61,8 @@ body {
 /* Map container with embedded iframe */
 #map-container {
     width: 100%;
-    height: calc(100vh - 100px); /* Adjusts the map height to fit below the toolbar */
-    margin-top: 100px; /* Offset to account for the toolbar height */
+    height: calc(100vh - 60px); /* Adjusts map height to fit below the toolbar */
+    margin-top: 60px; /* Aligns the map immediately below the toolbar */
     background-color: #eaeaea;
     position: relative;
 }
