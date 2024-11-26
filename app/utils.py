@@ -150,34 +150,32 @@ def create_counties_map(m, df, illinois_geojson, counties_geojson):
         row = df[df['County'] == county_name + " County"]
         if not row.empty:
             cap = row.iloc[0]['CAP']
-            document = row.iloc[0]['Document']
+            document = row.iloc[0]['Document Type']
             if cap == "Yes" and document == "Climate Action Plan":
-                return '#1a9850'  # Strong green
+                return '#1a9850'
             elif cap == "Yes":
-                return '#66c2a5'  # Mid green
+                return '#66c2a5'
             else:
-                return '#fdae61'  # Light orange
-        return '#d9d9d9'  # Gray for missing data
+                return '#fdae61'
+        return '#d9d9d9'
 
-    # Iterate through the counties in the GeoJSON
+
     for feature in counties_geojson['features']:
         county_name = feature['properties']['name']
         color = county_color(county_name)
         
-        # Filter relevant information for the popup
         county_info = df[df['County'] == county_name + " County"]  # Match GeoJSON name with CSV
         
         if not county_info.empty and county_info.iloc[0]['CAP'] == "Yes":
             county_info = county_info.iloc[0]  # Get the first (and only) row
             
             # Add information to GeoJSON properties for the popup
-            feature['properties']['document'] = county_info['Document']
+            feature['properties']['document'] = county_info['Document Type']
             feature['properties']['program_name'] = county_info['Program Name']
             feature['properties']['focus_area'] = county_info['Focus Area']
             feature['properties']['outcome_measures'] = county_info['Outcome Measures']
             feature['properties']['link'] = county_info['Link']
         else:
-            # If no data, ensure empty properties for the popup
             feature['properties']['document'] = "No data available"
             feature['properties']['program_name'] = "No data available"
             feature['properties']['focus_area'] = "No data available"

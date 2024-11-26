@@ -1,36 +1,36 @@
-County,CAP,Document,Link,Program Name,Name,Title,Email,Phone,Date Issued,Date Expired,Focus Area,Summary,Program Type,Collaboration,Target Population,Funding Source,Outcome Measures,Action Plan
-Adams County,Yes,Sustainability Plan,https://www.epa.gov/system/files/documents/2023-12/adams-county-updated-cap-narrative.pdf,Adams County Countywide Action Plan (CAP),,,,,,,"Environmental health, economic development, Chesapeake Bay water quality, agricultural and urban BMPs, reporting and tracking improvements, research, education, and training","achieve pollutant reductions, improve tracking and monitoring of best management practices (BMPs), and enhance public education and training.",Countywide environmental action plan,,"Adams County residents, particularly agricultural and urban sectors",,"Includes pollutant reduction goals, establishment of BMPs, tracking of BMP installations, and long-term water quality improvements.","Details include statewide programmatic recommendations, pollutant reduction activities for agricultural and urban areas, and initiatives for public education and training"
-Alexander County,No,Comprehensive Plan,https://alexandercountync.gov/pdf/comprehensive-plan.pdf,Alexander County 2045 Comprehensive Plan,Comprehensive Plan Steering Committee,,,,4.8.2024,,"Land use, transportation, economic development, housing, public services, environment and recreation, historic and cultural resources.","The plan outlines a vision for Alexander County’s future development, addressing the quality of life, economic growth, infrastructure, and preservation of natural resources",Comprehensive long-term development and strategic planning document,,"Residents of Alexander County, businesses, and future populations",,"Includes growth management, quality of life enhancements, preservation of natural and cultural resources, economic diversification, infrastructure improvements","The plan includes specific goals related to managing land use, promoting mixed-use development, protecting sensitive natural areas, and enhancing transportation and public facilities."
-Bond County,No,Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-bondcounty.pdf,Bond County Hazard Mitigation Plan,Allan L. Davis,Coordinator,,,February 2010,,"Multi-hazard mitigation including tornadoes, severe thunderstorms, winter storms, flooding, and hazardous material releases.","The Bond County Hazard Mitigation Plan is developed to reduce or eliminate long-term risks to people and property from natural and human-caused hazards. It includes risk assessments, mitigation goals, and an action plan.",Countywide hazard mitigation plan,,"Bond County residents, infrastructure, and facilities vulnerable to identified hazards.",,"Reduction of vulnerability to hazards, improved resilience of essential services, and better emergency response infrastructure.","Includes hazard-specific risk assessments, goals, and actions across different jurisdictions, along with an implementation strategy for mitigation projects."
-Boone County,No,Comprehensive Plan,https://cms8.revize.com/revize/booneil/Comprehensive%20Plan%202020.pdf,Boone County Comprehensive Plan 2020,,,,,No specific issue date found; planning process occurred from 2017 to 2018,Target horizon set for 2029,"Livability and recreation, environmental sustainability, economic development, housing, education, land use, transportation, health, wellness, and safety","A long-term comprehensive development plan covering diverse topics aimed at guiding Boone County's future growth, quality of life, and sustainability",,,Boone County residents and businesses,,"Improvement in quality of life, sustainable development, and resilience across focus areas","Goals and strategies for each focus area, including specific initiatives for recreation, economic growth, housing, transportation, and public health and safety"
+County,CAP,Document Type,Link,Program Name,Name,Title,Email,Phone,Date Issued,Date Expired,Focus Area,Summary,Program Type,Collaboration,Target Population,Funding Source,Outcome Measures,Action Plan
+Adams County,Yes,Sustainability Plan,https://www.epa.gov/system/files/documents/2023-12/adams-county-updated-cap-narrative.pdf,Adams County Countywide Action Plan (CAP),N/A,N/A,N/A,N/A,N/A,N/A,"Environmental health, economic development, Chesapeake Bay water quality, agricultural and urban BMPs, reporting and tracking improvements, research, education, and training","achieve pollutant reductions, improve tracking and monitoring of best management practices (BMPs), and enhance public education and training.",Countywide environmental action plan,,"Adams County residents, particularly agricultural and urban sectors",,"Includes pollutant reduction goals, establishment of BMPs, tracking of BMP installations, and long-term water quality improvements.","Details include statewide programmatic recommendations, pollutant reduction activities for agricultural and urban areas, and initiatives for public education and training"
+Alexander County,No,,,,,,,,,,,,,,,,,
+Bond County,No,,,,,,,,,,,,,,,,,
+Boone County,No,,,,,,,,,,,,,,,,,
 Brown County,No,,,,,,,,,,,,,,,,,
 Bureau County,No,,,,,,,,,,,,,,,,,
 Calhoun County,No,,,,,,,,,,,,,,,,,
 Carroll County,No,,,,,,,,,,,,,,,,,
 Cass County,No,,,,,,,,,,,,,,,,,
-Champaign County,Check,Sustainability Plan?,https://icap.sustainability.illinois.edu/project/city-champaign-plans,,,,,,,,,,,,,,,
+Champaign County,Yes,Sustainability Plan,https://icap.sustainability.illinois.edu/project/city-champaign-plans,Sustainability Plan,,,,,,,,,,,,,,
 Christian County,No,,,,,,,,,,,,,,,,,
 Clark County,No,,,,,,,,,,,,,,,,,
 Clay County,No,,,,,,,,,,,,,,,,,
 Clinton County,No,,,,,,,,,,,,,,,,,
-Coles County,No,Comprehensive Plan,https://www.colesco.illinois.gov/static/plans/Comp%20Plan%20with%20Attachments.pdf,Coles County Comprehensive Plan,,,,,"Adopted on November 14, 2006",Updated in 2012 with a recommendation for the next update by 2017.,"Land use, environmental sustainability, agriculture, infrastructure, transportation, economic development, and cultural/historical preservation.","The plan addresses growth management, land use patterns, transportation, economic strategies, and preservation of natural and cultural resources to guide development in Coles County over 10–20 years.",Countywide comprehensive plan,,"Coles County residents, local businesses, agricultural communities, and regional partners.",,"Improvement in quality of life, economic resilience, land preservation, sustainable infrastructure development, and protection of natural resources.","Includes goals and strategies for various areas, such as enhancing community facilities, establishing development standards, economic growth, farmland protection, housing, intergovernmental cooperation, recreation and open space, and transportation enhancements."
-Cook County,No,Sustainability Plan,https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/documents/2023-07/2022%20Sustainability%20Report_FINAL%207.24%20%28002%29.pdf,Cook County Sustainability Program,Deborah Stone,"Chief Sustainability Officer, Cook County Department of Environment and Sustainability",,,2022,,"Climate resilience, environmental justice, energy efficiency, green infrastructure, and community health.","The report outlines Cook County’s sustainability initiatives to improve environmental health, reduce emissions, enhance resilience, and promote economic and social well-being. Key projects involve ARPA-funded initiatives addressing pollution reduction, renewable energy, climate resilience, and equitable access to sustainable resources.",Countywide environmental sustainability initiative,,"Residents of Cook County, with a focus on underserved and low-income communities.",,"Reduction in greenhouse gas emissions, increased renewable energy use, brownfield site remediation, expanded EV charging stations, and improvements in public health and environmental conditions in affected communities.","Includes implementing the Clean Energy Plan, brownfield remediation, lead service line replacements, urban farming initiatives, climate resilience planning, solar installations, and various energy efficiency projects."
+Coles County,No,,,,,,,,,,,,,,,,,
+Cook County,Yes,Sustainability Plan,https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/documents/2023-07/2022%20Sustainability%20Report_FINAL%207.24%20%28002%29.pdf,Cook County Sustainability Program,Deborah Stone,"Chief Sustainability Officer, Cook County Department of Environment and Sustainability",N/A,N/A,2022,N/A,"Climate resilience, environmental justice, energy efficiency, green infrastructure, and community health.","The report outlines Cook County’s sustainability initiatives to improve environmental health, reduce emissions, enhance resilience, and promote economic and social well-being. Key projects involve ARPA-funded initiatives addressing pollution reduction, renewable energy, climate resilience, and equitable access to sustainable resources.",Countywide environmental sustainability initiative,,"Residents of Cook County, with a focus on underserved and low-income communities.",,"Reduction in greenhouse gas emissions, increased renewable energy use, brownfield site remediation, expanded EV charging stations, and improvements in public health and environmental conditions in affected communities.","Includes implementing the Clean Energy Plan, brownfield remediation, lead service line replacements, urban farming initiatives, climate resilience planning, solar installations, and various energy efficiency projects."
 Crawford County,No,,,,,,,,,,,,,,,,,
-Cumberland County,No,Comprehensive Plan,https://cumberlandcoil.gov/pdf/Cumberland%20County%20Comp%20Plan%20Draft.pdf,,,,,,,,,,,,,,,
-DeKalb County,Yes,Sustainability Plan,https://www.cityofdekalb.com/DocumentCenter/View/372/Sustainability-Plan-PDF?bidId=,City of DeKalb Sustainability Plan,,,,,"October 6, 2014",,"Key areas include city operations, air quality, green economy development, alternative energy, food security, natural environment, housing and urban design, solid waste, transportation, and water resources.","The DeKalb Sustainability Plan is a forward-looking document that outlines sustainable goals and actions across various areas to make the city more resilient and improve the quality of life for current and future residents. The plan emphasizes citizen engagement, environmental health, and strategic goals in urban planning and development.",Citywide sustainability plan,,Residents and stakeholders of the City of DeKalb,,"Sustainable economic development, enhanced community health, improved environmental quality, resource conservation, and energy efficiency.","Includes goals with prioritized short-, medium-, and long-term actions across each focus area, such as reducing greenhouse gas emissions, promoting green business, expanding alternative energy, and improving water and transportation infrastructure."
-DeWitt County,No,Comprehensive Plan,https://cms2.revize.com/revize/dewitt/Documents/Departments/Planning%20and%20Zoning/DeWitt%20County%20Comprehensive%20Plan%20FINAL%201-2-19%20(1).pdf,,,,,,,,,,,,,,,
+Cumberland County,No,,,,,,,,,,,,,,,,,
+DeKalb County,Yes,Sustainability Plan,https://www.cityofdekalb.com/DocumentCenter/View/372/Sustainability-Plan-PDF?bidId=,City of DeKalb Sustainability Plan,N/A,N/A,N/A,N/A,"October 6, 2014",N/A,"Key areas include city operations, air quality, green economy development, alternative energy, food security, natural environment, housing and urban design, solid waste, transportation, and water resources.","The DeKalb Sustainability Plan is a forward-looking document that outlines sustainable goals and actions across various areas to make the city more resilient and improve the quality of life for current and future residents. The plan emphasizes citizen engagement, environmental health, and strategic goals in urban planning and development.",Citywide sustainability plan,,Residents and stakeholders of the City of DeKalb,,"Sustainable economic development, enhanced community health, improved environmental quality, resource conservation, and energy efficiency.","Includes goals with prioritized short-, medium-, and long-term actions across each focus area, such as reducing greenhouse gas emissions, promoting green business, expanding alternative energy, and improving water and transportation infrastructure."
+DeWitt County,No,,,,,,,,,,,,,,,,,
 Douglas County,No,,,,,,,,,,,,,,,,,
-DuPage County,Yes,Sustainability Plan,https://www.dupageforest.org/hubfs/DuPage2022/What%20We%20Do/Master%20Plan%20and%20Capital%20Projects/Project%20Related%20PDFs/FPDDC%20CERSP%20Gaps%2C%20Barriers%2C%20and%20Opportunities%20V4.3.pdf,"Forest Preserve District of DuPage County (FPDDC) Clean Energy, Resiliency, and Sustainability Plan",,,,,May 2023,,"Clean energy, climate resilience, environmental sustainability, ecosystem management, waste management, and sustainable transportation.","This plan aims to enhance sustainability efforts within the FPDDC by focusing on reducing greenhouse gas emissions, improving energy efficiency, increasing climate resilience, and promoting sustainable practices across the preserves.",Countywide environmental and sustainability strategy,,Residents of DuPage County and visitors to the forest preserves,,"Includes reduction in carbon emissions, energy savings, increased resilience to climate change, and enhanced public education on sustainability.","Detailed recommendations across clean energy, resilience, and sustainability categories, including energy audits, green infrastructure projects, land and water management improvements, and waste reduction initiatives."
-Edgar County,No,Multi-Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-edgarcounty.pdf,,,,,,,,,,,,,,,
-Edwards County,No,Multi-Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-edwardscounty.pdf,,,,,,,,,,,,,,,
+DuPage County,Yes,Sustainability Plan,https://www.dupageforest.org/hubfs/DuPage2022/What%20We%20Do/Master%20Plan%20and%20Capital%20Projects/Project%20Related%20PDFs/FPDDC%20CERSP%20Gaps%2C%20Barriers%2C%20and%20Opportunities%20V4.3.pdf,"Forest Preserve District of DuPage County (FPDDC) Clean Energy, Resiliency, and Sustainability Plan",N/A,N/A,N/A,N/A,May 2023,N/A,"Clean energy, climate resilience, environmental sustainability, ecosystem management, waste management, and sustainable transportation.","This plan aims to enhance sustainability efforts within the FPDDC by focusing on reducing greenhouse gas emissions, improving energy efficiency, increasing climate resilience, and promoting sustainable practices across the preserves.",Countywide environmental and sustainability strategy,,Residents of DuPage County and visitors to the forest preserves,,"Includes reduction in carbon emissions, energy savings, increased resilience to climate change, and enhanced public education on sustainability.","Detailed recommendations across clean energy, resilience, and sustainability categories, including energy audits, green infrastructure projects, land and water management improvements, and waste reduction initiatives."
+Edgar County,No,,,,,,,,,,,,,,,,,
+Edwards County,No,,,,,,,,,,,,,,,,,
 Effingham County,No,,,,,,,,,,,,,,,,,
 Fayette County,No,,,,,,,,,,,,,,,,,
 Ford County,No,,,,,,,,,,,,,,,,,
 Franklin County,No,,,,,,,,,,,,,,,,,
-Fulton County,No,Comprehensive Plan,https://fultoncountyil.gov/wp-content/uploads/2022/11/comp-plan_20141106080917.pdf,,,,,,,,,,,,,,,
+Fulton County,No,,,,,,,,,,,,,,,,,
 Gallatin County,No,,,,,,,,,,,,,,,,,
 Greene County,No,,,,,,,,,,,,,,,,,
-Grundy County,No,Comprehensive Plan,https://gedc.com/wp-content/uploads/2020/11/Grundy-County-Comprehensive-Plan-ADOPTED-2014-2030.pdf,,,,,,,,,,,,,,,
+Grundy County,No,,,,,,,,,,,,,,,,,
 Hamilton County,No,,,,,,,,,,,,,,,,,
 Hancock County,No,,,,,,,,,,,,,,,,,
 Hardin County,No,,,,,,,,,,,,,,,,,
@@ -40,58 +40,75 @@ Iroquois County,No,,,,,,,,,,,,,,,,,
 Jackson County,No,,,,,,,,,,,,,,,,,
 Jasper County,No,,,,,,,,,,,,,,,,,
 Jefferson County,No,,,,,,,,,,,,,,,,,
-Jersey County,No,Hazard Mitigation Plan,https://jerseycountyillinois.us/wp-content/uploads/2022/10/Mitigation_Plan_2021_FINAL-compressed.pdf,,,,,,,,,,,,,,,
+Jersey County,No,,,,,,,,,,,,,,,,,
 Jo Daviess County,No,,,,,,,,,,,,,,,,,
 Johnson County,No,,,,,,,,,,,,,,,,,
-Kane County,Yes,Climate Action Plan,https://www.kanecountyil.gov/sustainability/PublishingImages/Pages/Climate-Action-Planning/Kane%20County%20Climate%20Action%20Implementation%20Plan%20052124%20REDUCED.pdf,https://www.kanecountyil.gov/sustainability/Documents/Climate-Action/Kane%20County%20Climate%20Action%20Baseline%20Assessment%20071923.pdf,None of the links working right now because of elections??,,,,,,,,,,,,,
-Kankakee County,No,Comprehensive Plan,https://www.k3county.net/DocumentCenter/View/254/Full-Comprehensive-Plan-PDF?bidId=,,,,,,,,,,,,,,,
-Kendall County,No,Community Action Plan,https://www.kendallhealth.org/wp-content/uploads/2017/09/Community-Action-Plan.pdf,,,,,,,,,,,,,,,
-Knox County,No,Multi-Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-knoxcounty.pdf,,,,,,,,,,,,,,,
+Kane County,Yes,Climate Action Plan,https://www.kanecountyil.gov/sustainability/PublishingImages/Pages/Climate-Action-Planning/Kane%20County%20Climate%20Action%20Implementation%20Plan%20052124%20REDUCED.pdf,Kane County Climate Action Implementation Plan,N/A,N/A,N/A,N/A,August 2022,N/A,"Community-wide GHG reduction, resilience building, public health, transportation, waste, and energy sectors.","The action plan strategies concerning healthcare in the document addresss the following points:
+
+Health Vulnerabilities and Resilience:
+Focus on reducing risks for vulnerable populations, including children, seniors, individuals with chronic illnesses, and economically disadvantaged groups.
+Address the health impacts of climate change, such as heatwaves, poor air quality, extended allergy seasons, and vector-borne diseases.
+Air Quality Improvement:
+Mitigate air pollution exacerbated by wildfires and climate change.
+Reduce exposure to allergens, pollutants, and ozone levels that can affect respiratory health.
+Flood and Weather-Related Health Risks:
+Develop strategies to manage health impacts related to flooding and extreme weather events, including waterborne diseases and infrastructure failures that could limit healthcare access.
+Community Engagement and Education:
+Raise awareness about the health impacts of climate change and encourage community-wide actions to mitigate these effects.
+Engage healthcare providers and organizations in implementing climate resilience strategies.
+Infrastructure Resilience:
+Strengthen healthcare infrastructure to withstand extreme weather events and ensure continuity of care during disasters.
+Policy Advocacy for Preventive Care:
+Advocate for policies that address the long-term healthcare challenges posed by climate change, focusing on proactive health measures and prevention.
+These strategies aim to integrate healthcare considerations into broader climate resilience and mitigation efforts, ensuring the well-being of the community in the face of climate impacts.","Public Awareness, Outreach, Community Engagement, Policy Advocacy, Preventive Care",Local Partners,"Children/Adolescents, Adults, Elderly, Health Vulnerability (High-Risk Populations)",N/A,"Health Outcomes, Pollution Reduction","Strategies include improving air quality, mitigating extreme weather health effects, and promoting resilient healthcare infrastructure."
+Kankakee County,No,,,,,,,,,,,,,,,,,
+Kendall County,No,,,,,,,,,,,,,,,,,
+Knox County,No,,,,,,,,,,,,,,,,,
 Lake County,No,,,,,,,,,,,,,,,,,
 LaSalle County,No,,,,,,,,,,,,,,,,,
-Lawrence County,No,Multi-Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-lawrencecounty.pdf,,,,,https://www.shelbycountyosr.com/_files/ugd/60b211_ba31d0ad30f342d69c7e963d038b4198.pdf,,,,,,,,,,
-Lee County,No,All Hazards Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-leecounty.pdf,,,,,Eight county effort,Shelby county,,,,,,,,,
-Livingston County,No,Comprehensive Plan,https://www.livingstoncounty-il.org/wordpress/wp-content/uploads/2014/12/UCLC-13.pdf,,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-livingstoncounty.pdf,,,,,,,,,,,,,
+Lawrence County,No,,,,,,,,,,,,,,,,,
+Lee County,No,,,,,,,,,,,,,,,,,
+Livingston County,No,,,,,,,,,,,,,,,,,
 Logan County,No,,,,,,,,,,,,,,,,,
-Macon County,No,Comprehensive Plan,https://decaturil.gov/DocumentCenter/View/273/Decatur-Macon-County-Comprehensive-Plan-PDF,,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-maconcounty.pdf,,,,,,,,,,,,,
+Macon County,No,,,,,,,,,,,,,,,,,
 Macoupin County,No,,,,,,,,,,,,,,,,,
-Madison County,Yes,Sustainability Plan,https://cms4files.revize.com/madisoncountyilus/document_center/Planning_Development/4__Sustainability_Policies.pdf,,,,,,,,,,,,,,,
+Madison County,Yes,Sustainability Plan,https://cms4files.revize.com/madisoncountyilus/document_center/Planning_Development/4__Sustainability_Policies.pdf,Sustainability Policy,N/A,N/A,N/A,N/A,N/A,N/A,"Sustainability, Energy, Air, Waste",The plan does not specifically address healthcare.,"Education, Policy Advocacy, Public Awareness","State Partners, Public-Private Partnerships",N/A,State Funding,"Health Outcomes, Air Quality Improvement, Pollution Reduction","Strategies include energy audits, retrofitting facilities, anti-idling policies, green building practices, renewable energy initiatives, and public education for sustainable practices."
 Marion County,No,,,,,,,,,,,,,,,,,
-Marshall County,No,Comprehensive Plan,https://marshall-il.com/wp-content/uploads/2022/04/PLP-41136-Marshall-Final-Comp-Plan-2014.pdf,,https://www.purchaseadd.org/wp-content/uploads/2023/11/Chapter-8-Marshall-County-2023-Update-.pdf,,,,,,,,,,,,,
-Mason County,No,All Hazards Mitigation Plan,https://masoncountyil.gov/wp-content/uploads/2024/04/EMA-Mason-CountyNHMPUpdateElectronicVersion11032022.pdf,,,,,,,,,,,,,,,
-Massac County,No,Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-massaccounty.pdf,,,,,,,,,,,,,,,
-McDonough County,No,Comprehensive Plan,http://mcg.mcdonough.il.us/documents/McD%20Comp%20Plan%20Web%20Version%20Rev%202014.pdf,,,,,,,,,,,,,,,
-McHenry County,No,Natural Hazards Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-mchenrycounty.pdf,,,,,,,,,,,,,,,
-McLean County,No,Action Plan,https://d2gfvfkk60hy7j.cloudfront.net/file/922/Adopted%20GoSafe-Report.pdf,,,,,,,,,,,,,,,
-Menard County,No,Comprehensive Plan,https://menardcountyil.gov/files/5214/7630/7153/COMPREHENSIVE_PLAN_OF_MENARD_COUNTY_Adopted_10.11.2016.pdf,,,,,,,,,,,,,,,
+Marshall County,No,,,,,,,,,,,,,,,,,
+Mason County,No,,,,,,,,,,,,,,,,,
+Massac County,No,,,,,,,,,,,,,,,,,
+McDonough County,No,,,,,,,,,,,,,,,,,
+McHenry County,No,,,,,,,,,,,,,,,,,
+McLean County,No,,,,,,,,,,,,,,,,,
+Menard County,No,,,,,,,,,,,,,,,,,
 Mercer County,No,,,,,,,,,,,,,,,,,
-Monroe County,No,Hazard Mitigation Plan,https://www.monroecounty.gov/files/oem/Monroe%20County%20Hazard%20Mitigation%20Plan%20Final%20Volume%201.pdf,,,,,,,,,,,,,,,
-Montgomery County,No,Natural Hazards Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-montgomerycounty.pdf,,,,,,,,,,,,,,,
-Morgan County,No,Natural Hazards Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-morgancounty.pdf,,,,,,,,,,,,,,,
-Moultrie County,No,Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-moultriecounty.pdf,,,,,,,,,,,,,,,
+Monroe County,No,,,,,,,,,,,,,,,,,
+Montgomery County,No,,,,,,,,,,,,,,,,,
+Morgan County,No,,,,,,,,,,,,,,,,,
+Moultrie County,No,,,,,,,,,,,,,,,,,
 Ogle County,No,,,,,,,,,,,,,,,,,
-Peoria County,Yes,Sustainability Plan,https://www.peoriacounty.gov/DocumentCenter/View/11409/2021-Sustainability-plan,,,,,,,,,,,,,,,
-Perry County,No,Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-perrycounty.pdf,,,,,,,,,,,,,,,
-Piatt County,No,Comprehensive Plan,https://piatt.gov/comprehensive%20plan/vol1.pdf,,,,,,,,,,,,,,,
+Peoria County,Yes,Sustainability Plan,https://www.peoriacounty.gov/DocumentCenter/View/11409/2021-Sustainability-plan,Operational Sustainability Plan 2021,N/A,N/A,N/A,N/A,2011,N/A,Sustainability,The plan does not specifically address healthcare.,Policy Advocacy,N/A,N/A,N/A,Environmental Outcomes,"Strategies cover sustainable building practices, resource conservation, and reduction of environmental impact."
+Perry County,No,,,,,,,,,,,,,,,,,
+Piatt County,No,,,,,,,,,,,,,,,,,
 Pike County,No,,,,,,,,,,,,,,,,,
 Pope County,No,,,,,,,,,,,,,,,,,
 Pulaski County,No,,,,,,,,,,,,,,,,,
 Putnam County,No,,,,,,,,,,,,,,,,,
 Randolph County,No,,,,,,,,,,,,,,,,,
 Richland County,No,,,,,,,,,,,,,,,,,
-Rock Island County,No,Comprehensive Plan,https://rockislandcountyil.gov/DocumentCenter/View/752/2020-Rock-Island-County-Comprehensive-Land-Use-Plan-PDF,,,,,,,,,,,,,,,
-St. Clair County,No,Comprehensive Plan,https://www.co.st-clair.il.us/webdocuments/departments/econdev/docs/StClairCountyComprehensivePlan.pdf,,https://www.co.st-clair.il.us/webdocuments/departments/ema/Forms/St.%20Clair%20County%20MHMP%20Final.pdf,,,,,,,,,,,,,
+Rock Island County,No,,,,,,,,,,,,,,,,,
+St. Clair County,No,,,,,,,,,,,,,,,,,
 Saline County,No,,,,,,,,,,,,,,,,,
 Sangamon County,No,,,,,,,,,,,,,,,,,
-Schuyler County,No,Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-schuylercounty.pdf,,,,,,,,,,,,,,,
+Schuyler County,No,,,,,,,,,,,,,,,,,
 Scott County,No,,,,,,,,,,,,,,,,,
-Shelby County,Yes,Eigth County Climate Action Plan,,,,,,,,,,,,,,,,
-Stark County,Yes,RTA Climate Action Plan,https://www.transit.dot.gov/sites/fta.dot.gov/files/2022-04/SARTA-Climate-Action-Plan.pdf,Stark Area RTA,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-starkcounty.pdf,,,,,,,,,,,,,
-Stephenson County,No,Hazard Mitigation Plan,https://stephensoncountyil.gov/2022-2027%20Stephenson%20County%20Multi-Hazard%20Mitigation%20Plan%20-%202022-06-01%20FINAL.pdf,,,,,,,,,,,,,,,
-Tazewell County,No,Comprehensive Plan,https://tricountyrpc.org/wp-content/uploads/1996-Tazewell-Comp-Plan-web.pdf,,,,,,,,,,,,,,,
+Shelby County,Yes,Climate Action Plan,,Eigth County Climate Action Plan,,,,,,,,,,,,,,
+Stark County,Yes,Climate Action Plan,https://www.transit.dot.gov/sites/fta.dot.gov/files/2022-04/SARTA-Climate-Action-Plan.pdf,SARTA Climate Action Plan,N/A,N/A,N/A,N/A,April 2022,N/A,Transportation and Environmental,"The plan focuses on Stark Area RTA’s initiatives to create a sustainable public transit system through alternative fuels like CNG and hydrogen, reducing GHG emissions, and improving facilities for environmental sustainability.",Research (Environmental Assessments),Federal Partners,N/A,Federal Grants,Pollution Reduction,"Strategies include replacing diesel vehicles with CNG and hydrogen-fueled ones, building an on-site hydrogen production facility, utilizing solar power for buildings, and increasing monitoring and reduction of GHG emissions."
+Stephenson County,No,,,,,,,,,,,,,,,,,
+Tazewell County,No,,,,,,,,,,,,,,,,,
 Union County,No,,,,,,,,,,,,,,,,,
-Vermilion County,No,Hazard Mitigation Plan,https://www.vercounty.org/wp-content/uploads/2024/05/FINAL-Vermilion-County-Hazard-Mitigation-Plan-05092024.pdf,,,,,,,,,,,,,,,
-Wabash County,No,Hazard Mitigation Plan,https://iemaohs.illinois.gov/content/dam/soi/en/web/iemaohs/recovery/documents/countyplans/plan-wabashcounty.pdf,,,,,,,,,,,,,,,
+Vermilion County,No,,,,,,,,,,,,,,,,,
+Wabash County,No,,,,,,,,,,,,,,,,,
 Warren County,No,,,,,,,,,,,,,,,,,
 Washington County,No,,,,,,,,,,,,,,,,,
 Wayne County,No,,,,,,,,,,,,,,,,,
@@ -99,5 +116,5 @@ White County,No,,,,,,,,,,,,,,,,,
 Whiteside County,No,,,,,,,,,,,,,,,,,
 Will County,No,,,,,,,,,,,,,,,,,
 Williamson County,No,,,,,,,,,,,,,,,,,
-Winnebago County,Yes,In progress,https://engager1.mysocialpinpoint.com/climate-action-plan-cap,Put the timeline in here - establishing climate action plan with the timeline - mention that its pending,,,,,,,,,,,,,,
+Winnebago County,Yes,Climate Action Plan,https://engager1.mysocialpinpoint.com/climate-action-plan-cap,Climate Action Plan,Lauren Kleve,Environmental Planner,LKleve@R1Planning.org,815-319-4180,Summer 2023,Winter 2025,"Air Quality, Built Environment, Energy, Natural & Working Lands, Waste Management, Water","The Climate Action Plan is in progress, currently in Phase 4: Identifying Climate Action Projects, with completion targeted for Winter 2025. The plan focuses on mitigating public health impacts such as extreme temperatures, flooding, and declining biodiversity while ensuring equity across all climate mitigation and adaptation strategies.","Public Awareness, Outreach, Community Engagement",Local Partners,"Health Vulnerability, High-Risk Populations",N/A,Air Quality Improvement,The plan includes strategies to engage the community in reducing climate-related health vulnerabilities and improving air quality.
 Woodford County,No,,,,,,,,,,,,,,,,,
