@@ -24,152 +24,6 @@ def map_county_style(feature):
     }
 
 
-# def create_cities_map(m, df, illinois_geojson, counties_geojson):
-
-#     # Display Illinois boundary with improved styling
-#     folium.GeoJson(
-#         illinois_geojson,
-#         name="Illinois",
-#         style_function=lambda feature: {
-#             'fillColor': '#FFFFFF00',  # Transparent fill
-#             'color': '#2E8B57',        # SeaGreen border
-#             'weight': 2
-#         },
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}  # OrangeRed highlight
-#     ).add_to(m)
-
-#     # Display county boundaries with tooltips showing county names
-#     folium.GeoJson(
-#         counties_geojson,
-#         name="Counties",
-#         style_function=map_county_style,
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},  # DarkOrange highlight
-#         tooltip=folium.GeoJsonTooltip(
-#             fields=['name'],  # Correct field name from your GeoJSON
-#             localize=True
-#         )
-#     ).add_to(m)
-
-#     # Add individual markers directly to the map
-#     for idx, row in df.iterrows():
-#         city = row['City'] if 'City' in row else None
-#         county = row['County']
-#         cap_link = row['CAP Link']
-#         focus_area = row['Focus Area']
-#         outcome_measures = row['Outcome Measures']
-#         program_name = row['Program Name']
-#         summary = row['Summary']
-
-#         # Get coordinates for marker
-#         city_coords = get_coordinates(city, county)
-        
-#         if city_coords:
-#             # Custom icon for the marker
-#             icon_url = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/static/icon.png'
-#             icon = folium.CustomIcon(icon_url, icon_size=(30, 30))
-
-#             # Create popup content with better HTML formatting
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0;">{city if city else county}</h3>
-#                     <p><strong>County:</strong> {county}</p>
-#                     <p><strong>Program:</strong> {program_name}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank">View Plan</a></p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                     <p><strong>Outcome Measures:</strong> {outcome_measures}</p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-            
-#             folium.Marker(
-#                 location=city_coords,
-#                 popup=popup,
-#                 tooltip=f"{city}, {county}",
-#                 icon=folium.Icon(color='darkgreen', icon='leaf', prefix='fa')
-#             ).add_to(m)
-
-#     # Save the map as HTML
-#     m.save('app/static/map.html')
-
-
-
-# def create_cities_map(m, df, illinois_geojson, counties_geojson):
-#     # Display Illinois boundary with improved styling
-#     folium.GeoJson(
-#         illinois_geojson,
-#         name="Illinois",
-#         style_function=lambda feature: {
-#             'fillColor': '#FFFFFF00',  # Transparent fill
-#             'color': '#2E8B57',        # SeaGreen border
-#             'weight': 2
-#         },
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}  # OrangeRed highlight
-#     ).add_to(m)
-
-#     # Display county boundaries with tooltips showing county names
-#     folium.GeoJson(
-#         counties_geojson,
-#         name="Counties",
-#         style_function=map_county_style,
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},  # DarkOrange highlight
-#         tooltip=folium.GeoJsonTooltip(
-#             fields=['name'],  # Correct field name from your GeoJSON
-#             localize=True
-#         )
-#     ).add_to(m)
-
-#     # Add individual markers with an enhanced design
-#     for idx, row in df.iterrows():
-#         city = row['City'] if 'City' in row else None
-#         county = row['County']
-#         cap_link = row['CAP Link']
-#         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
-#         outcome_measures = row['Outcome Measures']
-#         program_name = row['Program Name']
-#         summary = row['Summary']
-
-#         # Get coordinates for marker
-#         city_coords = get_coordinates(city, county)
-        
-#         if city_coords:
-#             # Create popup content with better HTML formatting
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0; color: #FF6347;">{city if city else county}</h3>
-#                     <p><strong>County:</strong> {county}</p>
-#                     <p><strong>Program:</strong> {program_name}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank" style="color: #1E90FF;">View Plan</a></p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                     <p><strong>Outcome Measures:</strong> {outcome_measures}</p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-
-#             # Add a CircleMarker with enhanced visual style
-#             circle_marker = folium.CircleMarker(
-#                 location=city_coords,
-#                 radius=12,  # Increased size for visibility
-#                 color='#FF4500',  # Bright border color (OrangeRed)
-#                 fill=True,
-#                 fill_color='#FF6347',  # Vibrant fill color (Tomato)
-#                 fill_opacity=0.7,  # Slightly transparent for a glowing effect
-#                 weight=3,  # Thicker border for better highlight
-#                 tooltip=f"{city}, {county}"
-#             )
-
-#             # Bind popup to CircleMarker
-#             circle_marker.add_to(m).add_child(popup)
-
-#     # Save the map as HTML
-#     m.save('app/static/map.html')
-
-
-
-
 
 def create_cities_map(m, df, illinois_geojson, counties_geojson):
     # Display Illinois boundary with improved styling
@@ -191,7 +45,7 @@ def create_cities_map(m, df, illinois_geojson, counties_geojson):
         style_function=map_county_style,
         highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},  # DarkOrange highlight
         tooltip=folium.GeoJsonTooltip(
-            fields=['name'],  # Correct field name from your GeoJSON
+            fields=['name'],
             localize=True
         )
     ).add_to(m)
@@ -200,17 +54,17 @@ def create_cities_map(m, df, illinois_geojson, counties_geojson):
     for idx, row in df.iterrows():
         city = row['City'] if 'City' in row else None
         county = row['County']
-        cap_link = row['CAP Link']
+        cap_link = row['Link']
         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
         outcome_measures = row['Outcome Measures']
         program_name = row['Program Name']
         summary = row['Summary']
 
         # Get coordinates for marker
-        city_coords = get_coordinates(city, county)
+        # city_coords = get_coordinates(city, county)
+        city_coords = [row['Lat'], row['Long']]
         
         if city_coords:
-            # Create popup content with better HTML formatting
             popup_html = f"""
                 <div style="width: 300px;">
                     <h3 style="margin-top: 0; color: #FF6347;">{city if city else county}</h3>
@@ -228,12 +82,12 @@ def create_cities_map(m, df, illinois_geojson, counties_geojson):
             # Add a CircleMarker with enhanced visual style
             circle_marker = folium.CircleMarker(
                 location=city_coords,
-                radius=12,  # Increased size for visibility
-                color='#FF4500',  # Bright border color (OrangeRed)
+                radius=12,
+                color='#FF4500',
                 fill=True,
-                fill_color='#FF6347',  # Vibrant fill color (Tomato)
-                fill_opacity=0.7,  # Slightly transparent for a glowing effect
-                weight=3,  # Thicker border for better highlight
+                fill_color='#FF6347',
+                fill_opacity=0.7, 
+                weight=3,
                 tooltip=f"{city}, {county}"
             )
 
@@ -270,22 +124,20 @@ def create_cities_map(m, df, illinois_geojson, counties_geojson):
 
             popup = folium.Popup(popup_html, max_width=300)
 
-            # Add a CircleMarker for LHD with yellow color
+            # LHD markers
             circle_marker = folium.CircleMarker(
                 location=lhd_coords,
-                radius=10,  # Slightly smaller than city markers
-                color='#FFD700',  # Yellow border color
+                radius=10,
+                color='#FFD700',
                 fill=True,
-                fill_color='#FFFF00',  # Vibrant yellow fill color
-                fill_opacity=0.7,  # Semi-transparent for glow effect
-                weight=3,  # Thicker border for better highlight
+                fill_color='#FFFF00',
+                fill_opacity=0.7,
+                weight=3,
                 tooltip=f"{lhd_name}, {area_served}"
             )
 
-            # Bind popup to CircleMarker
             circle_marker.add_to(m).add_child(popup)
 
-    # Save the map as HTML
     m.save('app/static/map.html')
 
 
@@ -309,9 +161,8 @@ def create_counties_map(m, df, illinois_geojson, counties_geojson):
 
     # Iterate through the counties in the GeoJSON
     for feature in counties_geojson['features']:
-        county_name = feature['properties']['name']  # County name from GeoJSON
-        print(f"Processing county: {county_name}")  # Debug: check each county
-        color = county_color(county_name)  # Get color for this county
+        county_name = feature['properties']['name']
+        color = county_color(county_name)
         
         # Filter relevant information for the popup
         county_info = df[df['County'] == county_name + " County"]  # Match GeoJSON name with CSV
