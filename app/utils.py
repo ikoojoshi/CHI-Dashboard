@@ -177,11 +177,11 @@ def create_cities_map(m, df, illinois_geojson, counties_geojson):
         illinois_geojson,
         name="Illinois",
         style_function=lambda feature: {
-            'fillColor': '#FFFFFF00',  # Transparent fill
-            'color': '#2E8B57',        # SeaGreen border
+            'fillColor': '#FFFFFF00',
+            'color': '#2E8B57',
             'weight': 2
         },
-        highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}  # OrangeRed highlight
+        highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}
     ).add_to(m)
 
     # Display county boundaries with tooltips showing county names
