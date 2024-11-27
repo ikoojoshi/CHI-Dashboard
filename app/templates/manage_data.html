@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage {{ data_type.capitalize() }} Data</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f2f3;
+        }
+        h1, p {
+            text-align: center;
+        }
+        .navbar {
+            background-color: #656256;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            background-color: #9ebc9f;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            background-color: #d3b88c;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #d3b88c;
+        }
+        .btn {
+            padding: 8px 12px;
+            background-color: #9ebc9f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #d3b88c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage {{ data_type.capitalize() }} Data</h1>
+
+    <div class="navbar">
+        <a href="/">Back to Dashboard</a>
+        <a href="/manage/cities">Cities</a>
+        <a href="/manage/counties">Counties</a>
+        <a href="/manage/lhd">Local Health Departments</a>
+    </div>
+
+    <!-- Form to Add New Entry -->
+    <h2>Add New Entry</h2>
+    <form method="POST">
+        {% for column in columns %}
+            <label for="{{ column }}">{{ column }}</label>
+            <input type="text" name="{{ column }}" id="{{ column }}">
+        {% endfor %}
+        <button type="submit" class="btn">Add Entry</button>
+    </form>
+
+    <!-- Display Current Data -->
+    <h2>Current Data</h2>
+    <table>
+        <thead>
+            <tr>
+                {% for column in columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+                <tr>
+                    {% for column in columns %}
+                        <td>{{ row[column] }}</td>
+                    {% endfor %}
+                    <td>
+                        <form action="/edit/{{ data_type }}" method="POST" style="display: inline;">
+                            <input type="hidden" name="row_index" value="{{ loop.index0 }}">
+                            {% for column in columns %}
+                                <input type="text" name="{{ column }}" value="{{ row[column] }}">
+                            {% endfor %}
+                            <button type="submit" class="btn">Save</button>
+                        </form>
+                        <form action="/delete/{{ data_type }}/{{ loop.index0 }}" method="POST" style="display: inline;">
+                            <button type="submit" class="btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
