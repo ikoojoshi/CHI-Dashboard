@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cities - Climate Action Plans</title>
+    <title>Counties - Climate Action Plans</title>
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <style>
@@ -66,7 +66,6 @@
             text-align: left;
             padding: 10px;
             word-wrap: break-word;
-            max-width: 200px;
             overflow: hidden; /* Hide overflow */
         }
 
@@ -74,7 +73,11 @@
             background-color: #f4f2f3; /* Light background for cells */
             color: #230903; /* Dark text */
             border-bottom: 1px solid #d3b88c; /* Subtle borders */
-            position: relative;
+        }
+
+        th {
+            background-color: #d3b88c; /* Warm beige header */
+            color: #230903; /* Dark text for contrast */
         }
 
         td div {
@@ -82,11 +85,6 @@
             overflow-y: auto; /* Add vertical scrolling */
             overflow-x: hidden; /* Prevent horizontal scroll */
             padding-right: 10px;
-        }
-
-        th {
-            background-color: #d3b88c; /* Warm beige header */
-            color: #230903; /* Dark text for contrast */
         }
 
         tr:hover {
@@ -97,7 +95,6 @@
             margin-top: 20px;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 40px;
@@ -107,8 +104,8 @@
     </style>
 </head>
 <body>
-    <h1>Cities - Climate Action Plans Across Illinois</h1>
-    <p>Explore detailed action plans for Cities.</p>
+    <h1>Counties - Climate Action Plans Across Illinois</h1>
+    <p>Explore detailed action plans for Counties.</p>
 
     <!-- Navigation Bar -->
     <div class="navbar">
@@ -122,16 +119,14 @@
         <p style="color: red; text-align: center;">{{ error }}</p>
     {% else %}
         <div class="table-container">
-            <h2>Cities Data</h2>
-            <table id="cities-table" class="display">
+            <h2>Counties Data</h2>
+            <table id="counties-table" class="display">
                 <thead>
                     <tr>
                         <th>County</th>
-                        <th>City</th>
-                        <th>Department</th>
                         <th>CAP</th>
-                        <th>Link</th>
                         <th>Document Type</th>
+                        <th>Link</th>
                         <th>Program Name</th>
                         <th>Name</th>
                         <th>Title</th>
@@ -153,11 +148,17 @@
                     {% for row in table_data %}
                         <tr>
                             <td><div>{{ row['County'] }}</div></td>
-                            <td><div>{{ row['City'] }}</div></td>
-                            <td><div>{{ row['Department'] }}</div></td>
                             <td><div>{{ row['CAP'] }}</div></td>
-                            <td><div><a href="{{ row['Link'] }}" target="_blank">View Document</a></div></td>
                             <td><div>{{ row['Document Type'] }}</div></td>
+                            <td>
+                                <div>
+                                    {% if row['Link'] %}
+                                        <a href="{{ row['Link'] }}" target="_blank">View Document</a>
+                                    {% else %}
+                                        N/A
+                                    {% endif %}
+                                </div>
+                            </td>
                             <td><div>{{ row['Program Name'] }}</div></td>
                             <td><div>{{ row['Name'] }}</div></td>
                             <td><div>{{ row['Title'] }}</div></td>
@@ -180,17 +181,15 @@
         </div>
     {% endif %}
 
-    <!-- Footer -->
     <footer>
         &copy; 2024 Climate Action Dashboard | Powered by Flask & DataTables
     </footer>
 
-    <!-- jQuery and DataTables JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#cities-table').DataTable({
+            $('#counties-table').DataTable({
                 scrollY: 400,
                 scrollX: true,
                 paging: true,
