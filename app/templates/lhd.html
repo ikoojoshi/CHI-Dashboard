@@ -50,6 +50,25 @@
             color: #230903; /* Contrast text on hover */
         }
 
+        .download-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #9ebc9f;
+            color: #230903;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+        }
+
+        .download-btn:hover {
+            background-color: #d3b88c;
+            color: #230903;
+        }
+
         /* Table Styling */
         .table-container {
             margin: 0 auto;
@@ -115,6 +134,9 @@
         <a href="/map">Map View</a>
     </div>
 
+    <!-- Download CSV Button -->
+    <a href="/download/lhd" class="download-btn">Download CSV</a>
+
     {% if error %}
         <p style="color: red; text-align: center;">{{ error }}</p>
     {% else %}
@@ -156,7 +178,7 @@
                                     {% if row['Website'] %}
                                         <a href="{{ row['Website'] }}" target="_blank">{{ row['Website'] }}</a>
                                     {% else %}
-                                         
+                                        N/A
                                     {% endif %}
                                 </div>
                             </td>

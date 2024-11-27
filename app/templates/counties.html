@@ -7,18 +7,17 @@
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <style>
-        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f4f2f3; /* Light neutral background */
-            color: #230903; /* Dark base color */
+            background-color: #f4f2f3;
+            color: #230903;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #230903; /* Dark color for title */
+            color: #230903;
         }
 
         p {
@@ -26,9 +25,8 @@
             font-size: 1.2em;
         }
 
-        /* Navigation Bar */
         .navbar {
-            background-color: #656256; /* Muted gray */
+            background-color: #656256;
             padding: 10px;
             border-radius: 5px;
             display: flex;
@@ -38,7 +36,7 @@
 
         .navbar a {
             text-decoration: none;
-            color: #f4f2f3; /* White text for contrast */
+            color: #f4f2f3;
             font-weight: bold;
             padding: 8px 15px;
             border-radius: 3px;
@@ -46,11 +44,29 @@
         }
 
         .navbar a:hover {
-            background-color: #9ebc9f; /* Subtle green hover effect */
-            color: #230903; /* Contrast text on hover */
+            background-color: #9ebc9f;
+            color: #230903;
         }
 
-        /* Table Styling */
+        .download-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #9ebc9f;
+            color: #230903;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+        }
+
+        .download-btn:hover {
+            background-color: #d3b88c;
+            color: #230903;
+        }
+
         .table-container {
             margin: 0 auto;
             width: 90%; /* Table spans 90% of the screen */
@@ -66,18 +82,9 @@
             text-align: left;
             padding: 10px;
             word-wrap: break-word;
-            overflow: hidden; /* Hide overflow */
-        }
-
-        td {
-            background-color: #f4f2f3; /* Light background for cells */
-            color: #230903; /* Dark text */
-            border-bottom: 1px solid #d3b88c; /* Subtle borders */
-        }
-
-        th {
-            background-color: #d3b88c; /* Warm beige header */
-            color: #230903; /* Dark text for contrast */
+            max-width: 200px;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         td div {
@@ -85,6 +92,17 @@
             overflow-y: auto; /* Add vertical scrolling */
             overflow-x: hidden; /* Prevent horizontal scroll */
             padding-right: 10px;
+        }
+
+        th {
+            background-color: #d3b88c; /* Warm beige header */
+            color: #230903;
+        }
+
+        td {
+            background-color: #f4f2f3; /* Light background for cells */
+            color: #230903; /* Dark text */
+            border-bottom: 1px solid #d3b88c; /* Subtle borders */
         }
 
         tr:hover {
@@ -114,6 +132,9 @@
         <a href="/lhd">Local Health Departments (LHDs)</a>
         <a href="/map">Map View</a>
     </div>
+
+    <!-- Download CSV Button -->
+    <a href="/download/counties" class="download-btn">Download CSV</a>
 
     {% if error %}
         <p style="color: red; text-align: center;">{{ error }}</p>

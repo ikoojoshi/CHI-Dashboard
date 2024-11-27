@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, request, jsonify
+from flask import render_template, Blueprint, request, jsonify, send_file
 import pandas as pd
 import os
 
@@ -63,6 +63,38 @@ def lhd():
         return render_template('lhd.html', table_data=table_data, error=None)
     except Exception as e:
         return render_template('lhd.html', table_data=[], error=f"Error reading file: {str(e)}")
+
+
+
+
+@main.route('/download/cities')
+def download_cities():
+    file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_cities.csv'
+
+    if not os.path.exists(file_path):
+        return "File not found.", 404
+
+    return send_file(file_path, as_attachment=True, download_name="ClimateActionPlan_cities.csv")
+
+
+@main.route('/download/counties')
+def download_counties():
+    file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_counties.csv'
+
+    if not os.path.exists(file_path):
+        return "File not found.", 404
+
+    return send_file(file_path, as_attachment=True, download_name="ClimateActionPlan_counties.csv")
+
+
+@main.route('/download/lhd')
+def download_lhd():
+    file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_lhd.csv'
+
+    if not os.path.exists(file_path):
+        return "File not found.", 404
+
+    return send_file(file_path, as_attachment=True, download_name="ClimateActionPlan_lhd.csv")
 
 
 
