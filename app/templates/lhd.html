@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Health Departments - Climate Action Plans</title>
-    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <style>
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f4f2f3; /* Light neutral background */
-            color: #230903; /* Dark base color */
+            background-color: #f4f2f3;
+            color: #230903;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #230903; /* Dark color for title */
+            color: #230903;
         }
 
         p {
@@ -28,7 +27,7 @@
 
         /* Navigation Bar */
         .navbar {
-            background-color: #656256; /* Muted gray */
+            background-color: #656256;
             padding: 10px;
             border-radius: 5px;
             display: flex;
@@ -126,7 +125,6 @@
     <h1>Climate Action Plans Across Illinois</h1>
     <!-- <p>Explore detailed action plans for Local Health Departments (LHDs).</p> -->
 
-    <!-- Navigation Bar -->
     <div class="navbar">
         <a href="/">Cities</a>
         <a href="/counties">Counties</a>
@@ -135,7 +133,6 @@
         <a href="/manage/cities">Add / Edit Data</a>
     </div>
 
-    <!-- Download CSV Button -->
     <a href="/download/lhd" class="download-btn">Download CSV</a>
 
     {% if error %}

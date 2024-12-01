@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counties - Climate Action Plans</title>
-    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <style>
         body {
@@ -69,7 +68,7 @@
 
         .table-container {
             margin: 0 auto;
-            width: 90%; /* Table spans 90% of the screen */
+            width: 90%; 
             margin-top: 20px;
         }
 
@@ -88,25 +87,25 @@
         }
 
         td div {
-            max-height: 100px; /* Set maximum height for the cell content */
-            overflow-y: auto; /* Add vertical scrolling */
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            max-height: 100px; 
+            overflow-y: auto;
+            overflow-x: hidden;
             padding-right: 10px;
         }
 
         th {
-            background-color: #d3b88c; /* Warm beige header */
+            background-color: #d3b88c;
             color: #230903;
         }
 
         td {
-            background-color: #f4f2f3; /* Light background for cells */
-            color: #230903; /* Dark text */
-            border-bottom: 1px solid #d3b88c; /* Subtle borders */
+            background-color: #f4f2f3;
+            color: #230903; 
+            border-bottom: 1px solid #d3b88c;
         }
 
         tr:hover {
-            background-color: #9ebc9f; /* Light green hover effect */
+            background-color: #9ebc9f; 
         }
 
         .dataTables_wrapper {
@@ -134,7 +133,6 @@
         <a href="/manage/cities">Add / Edit Data</a>
     </div>
 
-    <!-- Download CSV Button -->
     <a href="/download/counties" class="download-btn">Download CSV</a>
 
     {% if error %}

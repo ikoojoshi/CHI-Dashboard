@@ -5,6 +5,14 @@ from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
 import requests
 from .config import state_geojson_url, counties_geojson_url
 
+
+# lhd_file_path = 'app/data/ClimateActionPlan_lhd.csv'
+# counties_file_path = 'app/data/ClimateActionPlan_counties.csv'
+# cities_file_path = 'app/data/ClimateActionPlan_cities.csv'
+
+def get_file_path(view_type):
+    return f'app/data/ClimateActionPlan_{view_type}.csv'
+
 def get_coordinates(city, county):
     geolocator = Nominatim(user_agent="flask_folium_app", timeout=10)
     try:
@@ -17,288 +25,14 @@ def get_coordinates(city, county):
 
 def map_county_style(feature):
     return {
-        'fillColor': '#FFFAF0',  # FloralWhite
-        'color': '#8B0000',      # DarkRed
+        'fillColor': '#FFFAF0',
+        'color': '#8B0000',
         'weight': 1.5,
         'fillOpacity': 0.3
     }
 
 
-
-# def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
-#     # Display Illinois boundary with improved styling
-#     folium.GeoJson(
-#         illinois_geojson,
-#         name="Illinois",
-#         style_function=lambda feature: {
-#             'fillColor': '#FFFFFF00',
-#             'color': '#2E8B57',
-#             'weight': 2
-#         },
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}
-#     ).add_to(m)
-
-#     # Display county boundaries with tooltips showing county names
-#     folium.GeoJson(
-#         counties_geojson,
-#         name="Counties",
-#         style_function=map_county_style,
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},  # DarkOrange highlight
-#         tooltip=folium.GeoJsonTooltip(
-#             fields=['name'],
-#             localize=True
-#         )
-#     ).add_to(m)
-
-#     # Add markers for cities from df
-#     for idx, row in df.iterrows():
-#         city = row['City'] if 'City' in row else None
-#         county = row['County']
-#         cap_link = row['Link']
-#         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
-#         outcome_measures = row['Outcome Measures']
-#         program_name = row['Program Name']
-#         summary = row['Summary']
-
-#         # Get coordinates for marker
-#         # city_coords = get_coordinates(city, county)
-#         city_coords = [row['Lat'], row['Long']]
-        
-#         if city_coords:
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0; color: #FF6347;">{city if city else county}</h3>
-#                     <p><strong>County:</strong> {county}</p>
-#                     <p><strong>Program:</strong> {program_name}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank" style="color: #1E90FF;">View Plan</a></p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                     <p><strong>Outcome Measures:</strong> {outcome_measures}</p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-            
-#             # Add a CircleMarker with enhanced visual style
-#             circle_marker = folium.CircleMarker(
-#                 location=city_coords,
-#                 radius=12,
-#                 color='#FF4500',
-#                 fill=True,
-#                 fill_color='#FF6347',
-#                 fill_opacity=0.7, 
-#                 weight=3,
-#                 tooltip=f"{city}, {county}"
-#             )
-
-#             # Bind popup to CircleMarker
-#             circle_marker.add_to(m).add_child(popup)
-
-#     # Load LHD data and filter to CAP="Yes"
-#     lhd_file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_lhd.csv'
-#     lhd_df = pd.read_csv(lhd_file_path)
-#     lhd_df = lhd_df[lhd_df['CAP'] == "Yes"]
-
-#     # Add markers for LHD
-#     for idx, row in lhd_df.iterrows():
-#         lhd_name = row['LHD Name']
-#         area_served = row['Area Served']
-#         cap_link = row['Link']
-#         summary = row['Summary'] if pd.notnull(row['Summary']) else "No summary available"
-#         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
-
-#         # Get coordinates for marker (assumes Area Served provides location)
-#         lhd_coords = get_coordinates(lhd_name, area_served)
-        
-#         if lhd_coords:
-#             # Create popup content for LHD
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0; color: #FFD700;">{lhd_name}</h3>
-#                     <p><strong>Area Served:</strong> {area_served}</p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank" style="color: #1E90FF;">View Plan</a></p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-
-#             # LHD markers
-#             circle_marker = folium.CircleMarker(
-#                 location=lhd_coords,
-#                 radius=10,
-#                 color='#FFD700',
-#                 fill=True,
-#                 fill_color='#FFFF00',
-#                 fill_opacity=0.7,
-#                 weight=3,
-#                 tooltip=f"{lhd_name}, {area_served}"
-#             )
-
-#             circle_marker.add_to(m).add_child(popup)
-
-#     m.save('app/static/map.html')
-
-
-
-# def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
-#     # Display Illinois boundary with improved styling
-#     folium.GeoJson(
-#         illinois_geojson,
-#         name="Illinois",
-#         style_function=lambda feature: {
-#             'fillColor': '#FFFFFF00',
-#             'color': '#2E8B57',
-#             'weight': 2
-#         },
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}
-#     ).add_to(m)
-
-#     # Display county boundaries with tooltips showing county names
-#     folium.GeoJson(
-#         counties_geojson,
-#         name="Counties",
-#         style_function=map_county_style,
-#         highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},  # DarkOrange highlight
-#         tooltip=folium.GeoJsonTooltip(
-#             fields=['name'],
-#             localize=True
-#         )
-#     ).add_to(m)
-
-#     # Add markers for cities from df
-#     for idx, row in df.iterrows():
-#         city = row['City'] if 'City' in row else None
-#         county = row['County']
-#         cap_link = row['Link']
-#         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
-#         outcome_measures = row['Outcome Measures']
-#         program_name = row['Program Name']
-#         summary = row['Summary']
-
-#         # Get coordinates for marker
-#         city_coords = [row['Lat'], row['Long']]
-        
-#         if city_coords:
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0; color: #FF6347;">{city if city else county}</h3>
-#                     <p><strong>County:</strong> {county}</p>
-#                     <p><strong>Program:</strong> {program_name}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank" style="color: #1E90FF;">View Plan</a></p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                     <p><strong>Outcome Measures:</strong> {outcome_measures}</p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-            
-#             # Add a CircleMarker with enhanced visual style
-#             circle_marker = folium.CircleMarker(
-#                 location=city_coords,
-#                 radius=12,
-#                 color='#FF4500',
-#                 fill=True,
-#                 fill_color='#FF6347',
-#                 fill_opacity=0.7, 
-#                 weight=3,
-#                 tooltip=f"{city}, {county}"
-#             )
-
-#             # Bind popup to CircleMarker
-#             circle_marker.add_to(m).add_child(popup)
-
-#     # Add markers for counties from counties_df
-#     print("Here")
-#     for idx, row in counties_df.iterrows():
-#         print("Jello")
-#         county_name = row['County'] if 'County' in row else None
-#         cap_link = row['Link']
-#         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
-#         summary = row['Summary']
-#         program_name = row['Program Name']
-
-#         # Get coordinates for marker
-#         county_coords = [row['Lat'], row['Long']]
-
-#         if county_coords:
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0; color: #4682B4;">{county_name}</h3>
-#                     <p><strong>Program:</strong> {program_name}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank" style="color: #1E90FF;">View Plan</a></p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-
-#             # Add a CircleMarker with blue color for counties
-#             circle_marker = folium.CircleMarker(
-#                 location=county_coords,
-#                 radius=10,
-#                 color='#4682B4',
-#                 fill=True,
-#                 fill_color='#87CEFA',
-#                 fill_opacity=0.7,
-#                 weight=3,
-#                 tooltip=f"{county_name}"
-#             )
-
-#             # Bind popup to CircleMarker
-#             circle_marker.add_to(m).add_child(popup)
-
-#     # Load LHD data and filter to CAP="Yes"
-#     lhd_file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_lhd.csv'
-#     lhd_df = pd.read_csv(lhd_file_path)
-#     lhd_df = lhd_df[lhd_df['CAP'] == "Yes"]
-
-#     # Add markers for LHD
-#     for idx, row in lhd_df.iterrows():
-#         lhd_name = row['LHD Name']
-#         area_served = row['Area Served']
-#         cap_link = row['Link']
-#         summary = row['Summary'] if pd.notnull(row['Summary']) else "No summary available"
-#         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
-
-#         # Get coordinates for marker (assumes Area Served provides location)
-#         lhd_coords = get_coordinates(lhd_name, area_served)
-        
-#         if lhd_coords:
-#             # Create popup content for LHD
-#             popup_html = f"""
-#                 <div style="width: 300px;">
-#                     <h3 style="margin-top: 0; color: #FFD700;">{lhd_name}</h3>
-#                     <p><strong>Area Served:</strong> {area_served}</p>
-#                     <p><strong>Focus Area:</strong> {focus_area}</p>
-#                     <p><strong>Summary:</strong> {summary}</p>
-#                     <p><strong>CAP Link:</strong> <a href="{cap_link}" target="_blank" style="color: #1E90FF;">View Plan</a></p>
-#                 </div>
-#             """
-
-#             popup = folium.Popup(popup_html, max_width=300)
-
-#             # LHD markers
-#             circle_marker = folium.CircleMarker(
-#                 location=lhd_coords,
-#                 radius=10,
-#                 color='#FFD700',
-#                 fill=True,
-#                 fill_color='#FFFF00',
-#                 fill_opacity=0.7,
-#                 weight=3,
-#                 tooltip=f"{lhd_name}, {area_served}"
-#             )
-
-#             circle_marker.add_to(m).add_child(popup)
-
-#     m.save('app/static/map.html')
-
 def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
-    # Display Illinois boundary with improved styling
     folium.GeoJson(
         illinois_geojson,
         name="Illinois",
@@ -310,19 +44,17 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
         highlight_function=lambda x: {'weight': 3, 'color': '#FF4500'}
     ).add_to(m)
 
-    # Display county boundaries with tooltips showing county names
     folium.GeoJson(
         counties_geojson,
         name="Counties",
         style_function=map_county_style,
-        highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},  # DarkOrange highlight
+        highlight_function=lambda x: {'weight': 3, 'color': '#FF8C00'},
         tooltip=folium.GeoJsonTooltip(
             fields=['name'],
             localize=True
         )
     ).add_to(m)
 
-    # Add markers for cities from df
     for idx, row in df.iterrows():
         city = row['City'] if 'City' in row else None
         county = row['County']
@@ -332,7 +64,6 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
         program_name = row['Program Name']
         summary = row['Summary']
 
-        # Get coordinates for marker
         city_coords = [row['Lat'], row['Long']]
         
         if city_coords:
@@ -350,22 +81,19 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
 
             popup = folium.Popup(popup_html, max_width=300)
             
-            # Add a CircleMarker with enhanced visual style
             circle_marker = folium.CircleMarker(
                 location=city_coords,
-                radius=12,  # Larger radius
-                color='#FF6347',  # Complementary red
+                radius=12,
+                color='#FF6347',
                 fill=True,
                 fill_color='#FF4500',
-                fill_opacity=0.9,  # Higher opacity
-                weight=4,  # Thicker border
+                fill_opacity=0.9,
+                weight=4,
                 tooltip=f"{city}, {county}"
             )
 
-            # Bind popup to CircleMarker
             circle_marker.add_to(m).add_child(popup)
 
-    # Add markers for counties from counties_df
     for idx, row in counties_df.iterrows():
         county_name = row['County'] if 'County' in row else None
         cap_link = row['Link']
@@ -373,7 +101,6 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
         summary = row['Summary']
         program_name = row['Program Name']
 
-        # Get coordinates for marker
         county_coords = [row['Lat'], row['Long']]
 
         if county_coords:
@@ -389,27 +116,23 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
 
             popup = folium.Popup(popup_html, max_width=300)
 
-            # Add a CircleMarker with enhanced visual style
             circle_marker = folium.CircleMarker(
                 location=county_coords,
-                radius=10,  # Larger radius
-                color='#4682B4',  # Complementary blue
+                radius=10, 
+                color='#4682B4',
                 fill=True,
                 fill_color='#1E90FF',
-                fill_opacity=0.9,  # Higher opacity
-                weight=4,  # Thicker border
+                fill_opacity=0.9,
+                weight=4,
                 tooltip=f"{county_name}"
             )
 
-            # Bind popup to CircleMarker
             circle_marker.add_to(m).add_child(popup)
 
-    # Load LHD data and filter to CAP="Yes"
-    lhd_file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_lhd.csv'
+    lhd_file_path = get_file_path("lhd")
     lhd_df = pd.read_csv(lhd_file_path)
     lhd_df = lhd_df[lhd_df['CAP'] == "Yes"]
 
-    # Add markers for LHD
     for idx, row in lhd_df.iterrows():
         lhd_name = row['LHD Name']
         area_served = row['Area Served']
@@ -417,7 +140,6 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
         summary = row['Summary'] if pd.notnull(row['Summary']) else "No summary available"
         focus_area = row['Focus Area'] if pd.notnull(row['Focus Area']) else "Unknown"
 
-        # Get coordinates for marker (assumes Area Served provides location)
         lhd_coords = get_coordinates(lhd_name, area_served)
         
         if lhd_coords:
@@ -433,14 +155,13 @@ def create_cities_map(m, df, counties_df, illinois_geojson, counties_geojson):
 
             popup = folium.Popup(popup_html, max_width=300)
 
-            # Add a CircleMarker with enhanced visual style
             circle_marker = folium.CircleMarker(
                 location=lhd_coords,
                 radius=10,
                 color='#FFD700',
                 fill=True,
                 fill_color='#FFFF00',
-                fill_opacity=0.9,  # Higher opacity
+                fill_opacity=0.9,
                 weight=4,
                 tooltip=f"{lhd_name}, {area_served}"
             )
@@ -473,12 +194,11 @@ def create_counties_map(m, df, illinois_geojson, counties_geojson):
         county_name = feature['properties']['name']
         color = county_color(county_name)
         
-        county_info = df[df['County'] == county_name + " County"]  # Match GeoJSON name with CSV
+        county_info = df[df['County'] == county_name + " County"]
         
         if not county_info.empty and county_info.iloc[0]['CAP'] == "Yes":
-            county_info = county_info.iloc[0]  # Get the first (and only) row
+            county_info = county_info.iloc[0] 
             
-            # Add information to GeoJSON properties for the popup
             feature['properties']['document'] = county_info['Document Type']
             feature['properties']['program_name'] = county_info['Program Name']
             feature['properties']['focus_area'] = county_info['Focus Area']
@@ -496,7 +216,7 @@ def create_counties_map(m, df, illinois_geojson, counties_geojson):
         counties_geojson,
         style_function=lambda feature: {
             'fillColor': county_color(feature['properties']['name']),
-            'color': '#555555',  # Border color
+            'color': '#555555', 
             'weight': 1.5,
             'fillOpacity': 0.7
         },
@@ -523,9 +243,7 @@ def create_counties_map(m, df, illinois_geojson, counties_geojson):
 
 
 def create_map(view_type='cities', filter_program=None, keyword=None):
-    # Load the correct CSV file based on the view type
 
-    # Initialize map with zoom restrictions and Illinois bounds
     m = folium.Map(
         location=[40.0, -89.0], 
         zoom_start=7,  
@@ -533,10 +251,9 @@ def create_map(view_type='cities', filter_program=None, keyword=None):
         width='100%', 
         height='90%',
         min_zoom=6.5,
-        max_bounds=[[36.0, -92.0], [43.5, -87.5]]  # Approximate bounds for Illinois
+        max_bounds=[[36.0, -92.0], [43.5, -87.5]]
     )
 
-    # Load GeoJSON data for Illinois and counties
     state_geojson = requests.get(state_geojson_url).json()
     counties_geojson = requests.get(counties_geojson_url).json()
 
@@ -567,24 +284,19 @@ def create_map(view_type='cities', filter_program=None, keyword=None):
             ]
         },
         style_function=lambda feature: {
-            'fillColor': '#FFFFFF',  # White fill
-            'color': '#FFFFFF',  # White border
+            'fillColor': '#FFFFFF', 
+            'color': '#FFFFFF',
             'weight': 0,
             'fillOpacity': 1
         }
     ).add_to(m)
 
 
-
-
     
-    counties_file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_counties.csv'
+    counties_file_path = get_file_path("counties")
     counties_df = pd.read_csv(counties_file_path)
-    cities_file_path = '/Users/ipshitaj/Documents/UIUC/OSI/CHI-Dashboard/app/data/ClimateActionPlan_cities.csv'
+    cities_file_path = get_file_path("cities")
     cities_df = pd.read_csv(cities_file_path)
-        
-
-    
     
 
     # Apply filters for program type and keyword
